@@ -1,5 +1,5 @@
 # z80-assembly
-This is a language file for pulsar edit (atom) for Z80 assembly.  It fixed a lot of issues with the original z80 language file from https://github.com/faithanalog/language-z80/blob/master/grammars/z80-assembly.cson.
+This is a language file for pulsar-edit (atom) for Z80 assembly.  It fixed a lot of issues with the original z80 language file from https://github.com/faithanalog/language-z80/blob/master/grammars/z80-assembly.cson.
 
 The fainthanalog language file has an issue where the quoted text is mulit-line and ends up quoteing a lot text because there is a Z80 instruction called af'. This instruction then quotes hundreds of lines of assembly code.  There is also an attempt to make both comments with '#' and ';'.
 '#' full line comment and must be started at the start of a line and ';' being able to be placed after some code.
