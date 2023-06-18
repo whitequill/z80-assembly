@@ -1,0 +1,71 @@
+scopeName: 'source.z80'
+name: 'z80 Assembly'
+fileTypes: [
+    'z80'
+]
+
+patterns: [
+    {
+        name: 'comment.line',
+        match: '^\\#.*|[;].*'
+    },
+    {
+        name: 'keyword.define.z80',
+        match: '((?i)bit|res|set)'
+    },
+    {
+        name: 'keyword.control.z80'
+        match: 'cpdr|cpir|cpd|cpi|cpl'
+    },
+    {
+        name: 'constant.operator.logical.z80',
+        match: '(?i)(adc|add|and|dec|inc|sbc|sub|xor|cp|or)'
+        captures: {
+            0: name: 'entity.name.function.z80'
+            2: name: 'constant.character.z80'
+        }
+    },
+    {
+        name: 'keyword.control.z80',
+        match: '(?i)(im[0-2]|call|djnz|indr|inir|halt|lddr|ldir|otdr|otir|otid|outd|outi|reti|retn|rlca|rrca|ccf|daa|exx|ind|ini|ldd|ldi|neg|nop|out|ret|rla|rlc|rld|rra|rrc|rrd|rst|scf|sla|sra|srl|di|ei|ex|in|jr|jp|jr|rl|rr)'
+    },
+    {
+        name: 'variable.language.register.z80',
+        match: '((?i)a[f]|a[f|]|ix|iy|a|b|c|d|e|h|i|l|r)'
+    },
+    {
+        name: 'variable.language.register.z80',
+        match: '((?i)ld) ((?i)[hl|ix|iy|a|i|r]*)',
+        captures: {
+            0: name: 'entity.name.function.z80'
+            3: name: 'variable.language.register.z80',
+        }
+    },
+    {
+        name: 'constant.character.hexadecimal.assembly',
+        match: '#+[A-Fa-f0-9]*|[0-9]'
+    },
+    {
+        name: 'support.function.directive.z80',
+        match: '((?i)ld|push|pop) ((?i)[dd|hl|sp|ix|iy]*)'
+    },
+    {
+        name: 'constant.z80'
+        match: '(?i)(sp|pe|po|nc|nz|m|p|c|z)'
+    },
+    {
+        name: 'storage.type.z80',
+        match: '\\b(?i)(ufp[0-9]+\\.[0-9]+|fp[0-9]+\\.[0-9]+|tifloat|ubyte|uword|byte|uint|word|asc|int)\\b'
+    },
+    {
+        name: 'support.function.directive.z80',
+        match: '\\.(?i)(tivariabletype|locallabelchar|variablename|endrelocate|nestmodules|binaryfill|binarymode|branchrule|breakpoint|exportmode|segaregion|tiarchived|elseifdef|endexport|endmodule|inclabels|addinstr|appfield|asciimap|relocate|segapart|unsquish|defcont|deflong|defpage|include|rlemode|sdsctag|signkey|tempvar|branch|define|echoln|elseif|export|fclose|global|ifndef|incbin|incbmp|module|nolist|repeat|struct|varloc|align|block|dbcos|dbrnd|dbsin|dwrnd|dwtan|endif|fopen|fpeek|fread|fseek|fsize|ifdef|local|undef|using|byte|dvar|echo|else|enum|fail|fill|fpos|list|loop|page|text|tvar|warn|word|asc|chk|end|equ|for|org|var|db|dw|if)\\b'
+    },
+    {
+        name: 'string.quoted.z80',
+        match: '(\'.*?[^\\\\]\')|(".*?[^\\\\]")|\'\'|""|\\<\\>'
+    }
+
+
+]
+scopeName: 'source.asm.z80'
