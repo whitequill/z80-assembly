@@ -10,3 +10,5 @@ The 'comment.line' is also a lot shorter and isn't as convoluted.
 I'm still having some issues with proper highlighting of regisers vs flags because of there being duplicate symbols for both registers and conditonal flags.  So some code still isn't that easy to read but, I don't know enough about Z80 assembly to know what is and isn't a conditional flag but I have made all instructions very readable.
 
 As an example "c" is both used as a register and a conditional flag. I couldn't find a way to get the highlighting to tell which is which.
+
+Input is welcome.
